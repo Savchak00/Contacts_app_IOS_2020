@@ -10,7 +10,10 @@ import UIKit
 @objc
 protocol ZoomViewController {
     func zoomingImageView(for transition: ZoomTransitionDelegate) -> UIImageView?
-    func zoomingBackgroundView(for transition: ZoomTransitionDelegate) ->UIView?
+    func zoomingIsOnlineView(for transition: ZoomTransitionDelegate) ->UIView?
+    func zoomingNameView(for transition: ZoomTransitionDelegate) ->UIView?
+    func zoomingEmailView(for transition: ZoomTransitionDelegate) ->UIView?
+    func zoomingBackButton(for transition: ZoomTransitionDelegate) ->UIView?
 }
 
 enum TransitionState {
@@ -79,7 +82,36 @@ extension ZoomTransitionDelegate: UIViewControllerAnimatedTransitioning {
         let backgroundImageView = maybeBackgroundImageView!
         let foregroundImageView = maybeForegroundImageView!
         
-        
+        if operation == false {
+            let maybeIsOnlineView = (foregroundViewController as? ZoomViewController)?.zoomingIsOnlineView(for: self)
+            assert(maybeIsOnlineView != nil, "Cannot find isOnline in backgroundVC")
+            
+            let isOnlineView = maybeIsOnlineView!
+            
+            isOnlineView.isHidden = true
+            
+            let maybeNameView = (foregroundViewController as? ZoomViewController)?.zoomingNameView(for: self)
+            assert(maybeNameView != nil, "Cannot find name in backgroundVC")
+            
+            let nameView = maybeNameView!
+            
+            nameView.isHidden = true
+            
+            let maybeEmailView = (foregroundViewController as? ZoomViewController)?.zoomingEmailView(for: self)
+            assert(maybeEmailView != nil, "Cannot find email in backgroundVC")
+            
+            let emailView = maybeEmailView!
+            
+            emailView.isHidden = true
+            
+            let maybeBackButtonView = (foregroundViewController as? ZoomViewController)?.zoomingBackButton(for: self)
+            assert(maybeBackButtonView != nil, "Cannot find backButton in backgroundVC")
+            
+            let backButton = maybeBackButtonView!
+            
+            backButton.isHidden = true
+            
+        }
         let imageViewSnaphot = UIImageView(image: backgroundImageView.image)
         imageViewSnaphot.contentMode = .scaleAspectFill
         imageViewSnaphot.layer.masksToBounds = true

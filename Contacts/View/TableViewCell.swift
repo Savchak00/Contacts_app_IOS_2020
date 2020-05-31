@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     private var isOnline: Bool?
     var myImageView =  UIImageView()
     private var myTextLabel =  UILabel()
-    private var isOnlineView = UIView()
+    var isOnlineView = UIView()
     
     
     override func layoutSubviews() {

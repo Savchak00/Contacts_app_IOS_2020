@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     var avatar = UIImageView()
-    private var isOnlineView = UIView()
+    var isOnlineView = UIView()
     
     override func layoutSubviews() {
         super.layoutSubviews()

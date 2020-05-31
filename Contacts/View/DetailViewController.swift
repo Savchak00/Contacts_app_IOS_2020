@@ -54,7 +54,7 @@ class DetailViewController: UIViewController {
     
     //MARK: - subviews
     
-    private var backButton: UIButton = {
+    var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Back", for: .normal)
@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
         return imageView
     }()
     
-    private var nameLabel: UILabel = {
+    var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
@@ -79,7 +79,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private var statusLabel: UILabel = {
+    var statusLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
@@ -88,7 +88,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private var mailLabel: UILabel = {
+    var mailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.systemBlue
@@ -179,8 +179,20 @@ extension DetailViewController: ZoomViewController {
         return imageView
     }
     
-    func zoomingBackgroundView(for transition: ZoomTransitionDelegate) -> UIView? {
-        nil
+    func zoomingIsOnlineView(for transition: ZoomTransitionDelegate) -> UIView? {
+        return statusLabel
+    }
+    
+    func zoomingEmailView(for transition: ZoomTransitionDelegate) -> UIView? {
+        return mailLabel
+    }
+    
+    func zoomingNameView(for transition: ZoomTransitionDelegate) -> UIView? {
+        return nameLabel
+    }
+    
+    func zoomingBackButton(for transition: ZoomTransitionDelegate) -> UIView? {
+        return backButton
     }
     
     

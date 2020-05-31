@@ -227,6 +227,22 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension MainViewController: ZoomViewController {
+    func zoomingIsOnlineView(for transition: ZoomTransitionDelegate) -> UIView? {
+        return nil
+    }
+    
+    func zoomingNameView(for transition: ZoomTransitionDelegate) -> UIView? {
+        nil
+    }
+    
+    func zoomingEmailView(for transition: ZoomTransitionDelegate) -> UIView? {
+        nil
+    }
+    
+    func zoomingBackButton(for transition: ZoomTransitionDelegate) -> UIView? {
+        nil
+    }
+    
     func zoomingImageView(for transition: ZoomTransitionDelegate) -> UIImageView? {
         if let indexPath = selectedIndexPath {
             if myTableView.isHidden == true {
@@ -239,11 +255,5 @@ extension MainViewController: ZoomViewController {
         }
         return nil
     }
-    
-    func zoomingBackgroundView(for transition: ZoomTransitionDelegate) -> UIView? {
-        return nil
-    }
-    
-    
 }
 
