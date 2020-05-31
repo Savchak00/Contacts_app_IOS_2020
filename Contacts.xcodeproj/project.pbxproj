@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087338D02483E382003D919C /* DetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087338CF2483E382003D919C /* DetailTransition.swift */; };
 		0888AB2A247EBEA80095DB9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888AB29247EBEA80095DB9D /* AppDelegate.swift */; };
 		0888AB2C247EBEA80095DB9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888AB2B247EBEA80095DB9D /* SceneDelegate.swift */; };
 		0888AB2E247EBEA80095DB9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888AB2D247EBEA80095DB9D /* MainViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087338CF2483E382003D919C /* DetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransition.swift; sourceTree = "<group>"; };
 		0888AB26247EBEA80095DB9D /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0888AB29247EBEA80095DB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0888AB2B247EBEA80095DB9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				0888AB2D247EBEA80095DB9D /* MainViewController.swift */,
+				087338CF2483E382003D919C /* DetailTransition.swift */,
 				08B522DA2482D3AE00B25D43 /* DetailViewController.swift */,
 				08B522D22482A44900B25D43 /* CollectionViewCell.swift */,
 				08B522D82482BBC400B25D43 /* TableViewCell.swift */,
@@ -183,7 +186,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
-				ORGANIZATIONNAME = "";
+				ORGANIZATIONNAME = "savchak-danylo";
 				TargetAttributes = {
 					0888AB25247EBEA80095DB9D = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -278,6 +281,7 @@
 				08ED455524830AD1000F364C /* Builder.swift in Sources */,
 				0888AB45247FDF210095DB9D /* ContactsPresenterProtocol.swift in Sources */,
 				0888AB43247FDBFC0095DB9D /* User.swift in Sources */,
+				087338D02483E382003D919C /* DetailTransition.swift in Sources */,
 				0888AB2C247EBEA80095DB9D /* SceneDelegate.swift in Sources */,
 				08ED455324830739000F364C /* ViewProtocol.swift in Sources */,
 				0888AB692480146A0095DB9D /* Data.swift in Sources */,
@@ -418,7 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NS6SQU5V7D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NS6SQU5V7D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

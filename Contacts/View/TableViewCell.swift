@@ -11,7 +11,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     private var isOnline: Bool?
-    private var myImageView =  UIImageView()
+    var myImageView =  UIImageView()
     private var myTextLabel =  UILabel()
     private var isOnlineView = UIView()
     

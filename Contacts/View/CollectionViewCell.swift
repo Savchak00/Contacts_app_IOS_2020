@@ -9,7 +9,7 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    private var avatar = UIImageView()
+    var avatar = UIImageView()
     private var isOnlineView = UIView()
     
     override func layoutSubviews() {

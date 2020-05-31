@@ -10,6 +10,10 @@ import UIKit
 
 class MainViewController: UIViewController, ViewProtocol {
     
+    let tranDelegate = ZoomTransitionDelegate(operation: true)
+    var selectedIndexPath: IndexPath!
+    
+    var imageViewToTransition = UIImage()
     
     var presenter: ContactsPresenterProtocol!
     
@@ -161,9 +165,10 @@ extension MainViewController: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
+        self.selectedIndexPath = indexPath
         vc.userInfo = self.presenter.contactsData[indexPath.item]
         vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .coverVertical
+        vc.transitioningDelegate = self.tranDelegate
         self.present(vc, animated: true, completion: nil)
         myTableView.deselectRow(at: indexPath, animated: true)
     }
@@ -214,8 +219,31 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let vc = DetailViewController()
         vc.userInfo = self.presenter.contactsData[indexPath.item]
         vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .coverVertical
+        vc.transitioningDelegate = self.tranDelegate
+        self.selectedIndexPath = indexPath
         self.present(vc, animated: true, completion: nil)
         myCollectionView.deselectItem(at: indexPath, animated: true)
     }
 }
+
+extension MainViewController: ZoomViewController {
+    func zoomingImageView(for transition: ZoomTransitionDelegate) -> UIImageView? {
+        if let indexPath = selectedIndexPath {
+            if myTableView.isHidden == true {
+                let cell = myCollectionView.cellForItem(at: indexPath) as! CollectionViewCell
+                return cell.avatar
+            } else {
+                let cell: TableViewCell = myTableView.cellForRow(at: indexPath) as! TableViewCell
+                return cell.myImageView
+            }
+        }
+        return nil
+    }
+    
+    func zoomingBackgroundView(for transition: ZoomTransitionDelegate) -> UIView? {
+        return nil
+    }
+    
+    
+}
+

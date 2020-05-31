@@ -9,7 +9,6 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
     var userInfo: User?
     
     private var centerConstraints: ([NSLayoutConstraint], [NSLayoutConstraint]) = ([], [])
@@ -38,7 +37,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        transitioningDelegate = d
         view.backgroundColor = UIColor.white
     }
     
@@ -64,7 +63,7 @@ class DetailViewController: UIViewController {
         return button
     }()
     
-    private var imageView: UIImageView = {
+    var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -173,4 +172,16 @@ class DetailViewController: UIViewController {
     @objc private func backButtonTapped() {
         self.dismiss(animated: true)
     }
+}
+
+extension DetailViewController: ZoomViewController {
+    func zoomingImageView(for transition: ZoomTransitionDelegate) -> UIImageView? {
+        return imageView
+    }
+    
+    func zoomingBackgroundView(for transition: ZoomTransitionDelegate) -> UIView? {
+        nil
+    }
+    
+    
 }
