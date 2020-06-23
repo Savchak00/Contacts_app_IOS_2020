@@ -1,6 +1,6 @@
 # Contacts
 
-1) MainViewController: переключатель с UITableView на UICollectionView
+1) MainViewController: Главный экран, содержит переключатель с UITableView на UICollectionView, которые находятся в этом контроллере.
 2) DetailViewControler: Вызывается при нажатии на ячейку, показывает данные о выбранной ячейке. Для него реализован кастомный переход.
 3) UI полностью построен в коде
 4) Реализована архитектура MVP: Файл Builder создает window?.rootViewController в SceneDelegate
